@@ -32,7 +32,7 @@ const HomeNavigationButton = ({ label, active }) => {
 		<Container>
 			<Image source={iconImage} style={{ tintColor: active ? null : Colors.lightGreyColor }} />
 			<Label style={{ color: active ? Colors.greenColor : Colors.lightGreyColor }}>
-				{label}
+				Our {label}
 			</Label>
 		</Container>
 	);

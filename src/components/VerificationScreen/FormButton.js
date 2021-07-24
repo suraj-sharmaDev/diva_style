@@ -66,15 +66,15 @@ const FormButton = props => {
 		<Container>
 			<ButtonGroup>
 				<InfoText>
-					Didn't receive OTP?
+					
 				</InfoText>
-				<ResendButton 
+				{/* <ResendButton 
 					onPress={handleResend} 
 					style={{ borderColor : resendEnable?Colors.greenColor:Colors.disabledGreenColor}}
 					disabled={!resendEnable}
 				>
 					<ResendText style={{color : resendEnable?Colors.greenColor : Colors.greyColor}}>Resend OTP</ResendText>
-				</ResendButton>
+				</ResendButton> */}
 			</ButtonGroup>
 			<SubmitButton 
 				onPress={props.handleSubmit}

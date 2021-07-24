@@ -41,7 +41,7 @@ const Header = ({ handleChangeNumber, userMobile }) => {
 				</View>
 			</View>
 			<View style={{marginTop : 20, flexDirection:'row', alignItems:'center', justifyContent:'center'}}>
-				<InfoText>Enter OTP sent to</InfoText>
+				<InfoText>Please enter 1234 to verify</InfoText>
 				<MobileText>{userMobile}</MobileText>
 			</View>
 		</Container>

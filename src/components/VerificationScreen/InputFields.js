@@ -30,7 +30,7 @@ const Input = styled.TextInput`
 const InputFields = ({handleSubmit}) => {
 	const inputs = Array(4).fill(0);
 	React.useEffect(()=>{
-		refs[0].focus();
+		refs[0]?.focus();
 	},[]);
 
 	const focusNext = (text, index) => {

@@ -29,14 +29,12 @@ const ButtonGroup = styled.View`
 	elevation: 1;
 	flex-direction: row;
 	background-color: white;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;	
 	border-radius: 8px;
 	padding: 0px 30px;
 `;
-const Button = styled.TouchableOpacity`
-	flex: 1;
-`;
+const Button = styled.TouchableOpacity``;
 const Separator = styled.View`
 	flex: 1;
 	height: 90%;
@@ -49,7 +47,7 @@ const HomeNavigator = props => {
 		<Container>
 			<HalfView></HalfView>
 			<View>
-				<Label style={{color: 'white'}}>Choose a service</Label>			
+				<Label style={{color: 'white'}}>Our Services</Label>			
 				<ButtonGroup>
 					<Button onPress={()=>props.navigation.navigate('Home')}
 						style={{alignItems: 'flex-start'}}
@@ -59,7 +57,7 @@ const HomeNavigator = props => {
 							active={props.navigation.state.routeName==='Home'}
 						/>
 					</Button>
-					<Separator>
+					{/* <Separator>
 						<Label>|</Label>
 					</Separator>							
 					<Button onPress={()=>props.navigation.navigate('Service')}
@@ -69,7 +67,7 @@ const HomeNavigator = props => {
 							label={'services'} 
 							active={props.navigation.state.routeName==='Service'}							
 						/>
-					</Button>
+					</Button> */}
 				</ButtonGroup>
 			</View>
 		</Container>
