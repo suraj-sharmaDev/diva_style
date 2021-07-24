@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "544873914792",
+    "firebase_url": "https://nextstore-fb30e.firebaseio.com",
+    "project_id": "nextstore-fb30e",
+    "storage_bucket": "nextstore-fb30e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:544873914792:android:e49b18e36074b097677d9d",
+        "android_client_info": {
+          "package_name": "com.nxtstores.customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "544873914792-khu4ubesjrrotel3tr4r3utvcf160ulp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nxtstores.customer",
+            "certificate_hash": "badc7c2df64e53ab966be34f12be327f5c63b3f7"
+          }
+        },
+        {
+          "client_id": "544873914792-r84i5rq5gs3uljucf52j2csmf67g97lb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBr0Mwah6dSgRcImoacsh6PMco2-B5B9fY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "544873914792-r84i5rq5gs3uljucf52j2csmf67g97lb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "RepairItemId": 4,
+    "RepairItems": "Single Door - Compressor unit",
+    "CategoryItemId": 4,
+    "Active": 1
+  },
+  {
+    "RepairItemId": 5,
+    "RepairItems": "Single Door - Gas Charge",
+    "CategoryItemId": 4,
+    "Active": 1
+  },
+  {
+    "RepairItemId": 6,
+    "RepairItems": "Single Door - Power unit",
+    "CategoryItemId": 4,
+    "Active": 1
+  },
+  {
+    "RepairItemId": 7,
+    "RepairItems": "Single Door - Accessories",
+    "CategoryItemId": 4,
+    "Active": 1
+  },
+  {
+    "RepairItemId": 8,
+    "RepairItems": "Single Door - Others",
+    "CategoryItemId": 4,
+    "Active": 1
+  },
+  {
+    "RepairItemId": 9,
+    "RepairItems": "Double door - Accessories",
+    "CategoryItemId": 4,
+    "Active": 1
+  },
+  {
+    "RepairItemId": 10,
+    "RepairItems": "Double door - Compressor unit",
+    "CategoryItemId": 4,
+    "Active": 1
+  },
+  {
+    "RepairItemId": 11,
+    "RepairItems": "Double door - Cooling issue",
+    "CategoryItemId": 4,
+    "Active": 1
+  },
+  {
+    "RepairItemId": 12,
+    "RepairItems": "Double door - Defrost issue",
+    "CategoryItemId": 4,
+    "Active": 1
+  },
+  {
+    "RepairItemId": 13,
+    "RepairItems": "Double door - Gas charge",
+    "CategoryItemId": 4,
+    "Active": 1
+  },
+  {
+    "RepairItemId": 14,
+    "RepairItems": "Double door - Others",
+    "CategoryItemId": 4,
+    "Active": 1
+  },
+  {
+    "RepairItemId": 15,
+    "RepairItems": "Double door - Power unit",
+    "CategoryItemId": 4,
+    "Active": 1
+  }
+]

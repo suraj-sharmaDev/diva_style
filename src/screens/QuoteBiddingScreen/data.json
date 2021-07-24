@@ -1,0 +1,54 @@
+{
+    "master": [
+        {
+            "id": 1,
+            "customerId": 1,
+            "status": "pending",
+            "type": "breakdown",
+            "deliveryAddress": "{\"id\":1,\"savedAs\":\"home\",\"coordinate\":{\"latitude\":9.230385,\"longitude\":76.515898},\"houseDetail\":\"Anugraha\",\"landmark\":\"Near Arvees\"}",
+            "createdAt": "2020-10-13T07:14:42.2200000Z"
+        }
+    ],
+    "detail": [
+        {
+            "id": 1,
+            "productName": "Breakdown Assistance",
+            "json": "{\"PackageItemName\":\"Breakdown Assistance\",\"Description\":\"Car Model XYZ\",\"destination\":{\"latitude\":9.27385,\"longitude\":76.785898,\"houseDetail\":\"Allapuzha\",\"landmark\":\"Carmel College Road\"}}",
+            "quoteMasterId": 1
+        }
+    ],
+    "providerBids": [
+        {
+            "id": 1,
+            "serviceProviderId": 2,
+            "quoteMasterId": 1,
+            "status": "pending",
+            "json": "{\"master\":{\"totalAmount\":32,\"serviceCharge\":13,\"discount\":0},\"detail\":[{\"productName\":\"A\",\"mrp\":\"12\",\"serviceCharge\":\"10\"},{\"productName\":\"B\",\"mrp\":\"20\",\"serviceCharge\":\"3\"}]}",
+            "createdAt": "2020-10-13T07:15:16.7466667Z"
+        },
+        {
+            "id": 3,
+            "serviceProviderId": 1,
+            "quoteMasterId": 1,
+            "status": "pending",
+            "json": "{\"master\":{\"totalAmount\":800,\"serviceCharge\":300,\"discount\":300},\"detail\":[{\"productName\":\"DV Bellow\",\"mrp\":200,\"serviceCharge\":300},{\"productName\":\"DV Assembly\",\"mrp\":300,\"serviceCharge\":300}]}",
+            "createdAt": "2020-10-13T07:30:01.5233333Z"
+        },
+        {
+            "id": 4,
+            "serviceProviderId": 1,
+            "quoteMasterId": 1,
+            "status": "pending",
+            "json": "{\"master\":{\"totalAmount\":800,\"serviceCharge\":300,\"discount\":300},\"detail\":[{\"productName\":\"DV Bellow\",\"mrp\":200,\"serviceCharge\":300},{\"productName\":\"DV Assembly\",\"mrp\":300,\"serviceCharge\":300}]}",
+            "createdAt": "2020-10-13T10:04:57.0666667Z"
+        },
+        {
+            "id": 5,
+            "serviceProviderId": 1,
+            "quoteMasterId": 1,
+            "status": "pending",
+            "json": "{\"master\":{\"totalAmount\":800,\"serviceCharge\":300,\"discount\":300},\"detail\":[{\"productName\":\"DV Bellow\",\"mrp\":200,\"serviceCharge\":300},{\"productName\":\"DV Assembly\",\"mrp\":300,\"serviceCharge\":300}]}",
+            "createdAt": "2020-10-13T10:06:42.1600000Z"
+        }
+    ]
+}

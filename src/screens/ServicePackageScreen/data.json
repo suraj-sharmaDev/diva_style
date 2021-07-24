@@ -1,0 +1,83 @@
+{
+    "repairItems": [
+        {
+            "RepairItemId": 1,
+            "RepairItems": "Below 180 CC",
+            "CategoryItemId": 1,
+            "Active": 1
+        },
+        {
+            "RepairItemId": 2,
+            "RepairItems": "Above 180 CC",
+            "CategoryItemId": 1,
+            "Active": 1
+        },
+        {
+            "RepairItemId": 3,
+            "RepairItems": "Bullet",
+            "CategoryItemId": 1,
+            "Active": 1
+        }
+    ],
+    "symptoms": [
+        {
+            "id": 1,
+            "CategoryItemId": 1,
+            "type": null,
+            "symptom": "Oil Leaking"
+        },
+        {
+            "id": 2,
+            "CategoryItemId": 1,
+            "type": null,
+            "symptom": "Too much engine noise"
+        },
+        {
+            "id": 3,
+            "CategoryItemId": 1,
+            "type": null,
+            "symptom": "Low mileage"
+        },
+        {
+            "id": 4,
+            "CategoryItemId": 1,
+            "type": null,
+            "symptom": "Loose chain"
+        },
+        {
+            "id": 5,
+            "CategoryItemId": 1,
+            "type": null,
+            "symptom": "Seized engine"
+        },
+        {
+            "id": 6,
+            "CategoryItemId": 1,
+            "type": null,
+            "symptom": "Too much smoke"
+        }
+    ],
+    "packages": [
+        {
+            "PackageId": 31,
+            "PackageName": "General check-up",
+            "CategoryItemId": 1,
+            "Description": null,
+            "Active": null
+        },
+        {
+            "PackageId": 32,
+            "PackageName": "Minor electrical check-up",
+            "CategoryItemId": 1,
+            "Description": null,
+            "Active": null
+        },
+        {
+            "PackageId": 33,
+            "PackageName": "Minor engine tune-up",
+            "CategoryItemId": 1,
+            "Description": null,
+            "Active": null
+        }
+    ]
+}

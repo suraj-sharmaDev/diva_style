@@ -1,0 +1,225 @@
+{
+    "predictions" : [
+       {
+          "description" : "Kochi, Kerala, India",
+          "matched_substrings" : [
+             {
+                "length" : 5,
+                "offset" : 0
+             }
+          ],
+          "place_id" : "ChIJv8a-SlENCDsRkkGEpcqC1Qs",
+          "reference" : "ChIJv8a-SlENCDsRkkGEpcqC1Qs",
+          "structured_formatting" : {
+             "main_text" : "Kochi",
+             "main_text_matched_substrings" : [
+                {
+                   "length" : 5,
+                   "offset" : 0
+                }
+             ],
+             "secondary_text" : "Kerala, India"
+          },
+          "terms" : [
+             {
+                "offset" : 0,
+                "value" : "Kochi"
+             },
+             {
+                "offset" : 7,
+                "value" : "Kerala"
+             },
+             {
+                "offset" : 15,
+                "value" : "India"
+             }
+          ],
+          "types" : [ "locality", "political", "geocode" ]
+       },
+       {
+          "description" : "Kochin, Valummel, Kochi, Kerala, India",
+          "matched_substrings" : [
+             {
+                "length" : 5,
+                "offset" : 0
+             }
+          ],
+          "place_id" : "ChIJFUiviHNtCDsR4rghMpe9tng",
+          "reference" : "ChIJFUiviHNtCDsR4rghMpe9tng",
+          "structured_formatting" : {
+             "main_text" : "Kochin",
+             "main_text_matched_substrings" : [
+                {
+                   "length" : 5,
+                   "offset" : 0
+                }
+             ],
+             "secondary_text" : "Valummel, Kochi, Kerala, India"
+          },
+          "terms" : [
+             {
+                "offset" : 0,
+                "value" : "Kochin"
+             },
+             {
+                "offset" : 8,
+                "value" : "Valummel"
+             },
+             {
+                "offset" : 18,
+                "value" : "Kochi"
+             },
+             {
+                "offset" : 25,
+                "value" : "Kerala"
+             },
+             {
+                "offset" : 33,
+                "value" : "India"
+             }
+          ],
+          "types" : [ "shopping_mall", "point_of_interest", "establishment" ]
+       },
+       {
+          "description" : "Cochin International Airport (COK), Airport Road, Kochi, Kerala, India",
+          "matched_substrings" : [
+             {
+                "length" : 34,
+                "offset" : 0
+             }
+          ],
+          "place_id" : "ChIJb0qPdIIICDsRWISWXeTrsjA",
+          "reference" : "ChIJb0qPdIIICDsRWISWXeTrsjA",
+          "structured_formatting" : {
+             "main_text" : "Cochin International Airport (COK)",
+             "main_text_matched_substrings" : [
+                {
+                   "length" : 34,
+                   "offset" : 0
+                }
+             ],
+             "secondary_text" : "Airport Road, Kochi, Kerala, India"
+          },
+          "terms" : [
+             {
+                "offset" : 0,
+                "value" : "Cochin International Airport (COK)"
+             },
+             {
+                "offset" : 36,
+                "value" : "Airport Road"
+             },
+             {
+                "offset" : 50,
+                "value" : "Kochi"
+             },
+             {
+                "offset" : 57,
+                "value" : "Kerala"
+             },
+             {
+                "offset" : 65,
+                "value" : "India"
+             }
+          ],
+          "types" : [ "airport", "point_of_interest", "establishment" ]
+       },
+       {
+          "description" : "Kochi Marriott Hotel, Old NH 47, Nethaji Nagar, Edappally, Kochi, Kerala, India",
+          "matched_substrings" : [
+             {
+                "length" : 5,
+                "offset" : 0
+             }
+          ],
+          "place_id" : "ChIJ-VzxI7ANCDsRjPQmgViw3yY",
+          "reference" : "ChIJ-VzxI7ANCDsRjPQmgViw3yY",
+          "structured_formatting" : {
+             "main_text" : "Kochi Marriott Hotel",
+             "main_text_matched_substrings" : [
+                {
+                   "length" : 5,
+                   "offset" : 0
+                }
+             ],
+             "secondary_text" : "Old NH 47, Nethaji Nagar, Edappally, Kochi, Kerala, India"
+          },
+          "terms" : [
+             {
+                "offset" : 0,
+                "value" : "Kochi Marriott Hotel"
+             },
+             {
+                "offset" : 22,
+                "value" : "Old NH 47"
+             },
+             {
+                "offset" : 33,
+                "value" : "Nethaji Nagar"
+             },
+             {
+                "offset" : 48,
+                "value" : "Edappally"
+             },
+             {
+                "offset" : 59,
+                "value" : "Kochi"
+             },
+             {
+                "offset" : 66,
+                "value" : "Kerala"
+             },
+             {
+                "offset" : 74,
+                "value" : "India"
+             }
+          ],
+          "types" : [ "lodging", "point_of_interest", "establishment" ]
+       },
+       {
+          "description" : "Kochi Naval Airport, Willingdon Island, Kochi, Kerala, India",
+          "matched_substrings" : [
+             {
+                "length" : 5,
+                "offset" : 0
+             }
+          ],
+          "place_id" : "ChIJqWI5OZ5yCDsRptANZKNbIEs",
+          "reference" : "ChIJqWI5OZ5yCDsRptANZKNbIEs",
+          "structured_formatting" : {
+             "main_text" : "Kochi Naval Airport",
+             "main_text_matched_substrings" : [
+                {
+                   "length" : 5,
+                   "offset" : 0
+                }
+             ],
+             "secondary_text" : "Willingdon Island, Kochi, Kerala, India"
+          },
+          "terms" : [
+             {
+                "offset" : 0,
+                "value" : "Kochi Naval Airport"
+             },
+             {
+                "offset" : 21,
+                "value" : "Willingdon Island"
+             },
+             {
+                "offset" : 40,
+                "value" : "Kochi"
+             },
+             {
+                "offset" : 47,
+                "value" : "Kerala"
+             },
+             {
+                "offset" : 55,
+                "value" : "India"
+             }
+          ],
+          "types" : [ "airport", "point_of_interest", "establishment" ]
+       }
+    ],
+    "status" : "OK"
+ }

@@ -1,0 +1,229 @@
+{
+    "orders": [
+        {
+            "id": 5,
+            "customerId": 1,
+            "shopId": 2,
+            "status": "completed",
+            "createdAt": "2020-10-16T08:45:42.7866667Z",
+            "deliveryAddress": "{\"id\":1,\"savedAs\":\"home\",\"coordinate\":{\"latitude\":9.173591,\"longitude\":76.555973},\"houseDetail\":\"Check\",\"landmark\":\"Ok\"}",
+            "shopName": "Grocery Store",
+            "shopImage": "https://nxtshops.com/assets/images/dist3/distpoint3/Avees.jpg",
+            "items": [
+                {
+                    "id": 18,
+                    "productId": 58,
+                    "productName": "Thums Up Soft Drink, 750 ml Bottle",
+                    "qty": 1,
+                    "price": 100,
+                    "orderMasterId": 5
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "customerId": 1,
+            "shopId": 2,
+            "status": "completed",
+            "createdAt": "2020-10-16T08:45:30.7300000Z",
+            "deliveryAddress": "{\"id\":1,\"savedAs\":\"home\",\"coordinate\":{\"latitude\":9.173591,\"longitude\":76.555973},\"houseDetail\":\"Check\",\"landmark\":\"Ok\"}",
+            "shopName": "Grocery Store",
+            "shopImage": "https://nxtshops.com/assets/images/dist3/distpoint3/Avees.jpg",
+            "items": [
+                {
+                    "id": 14,
+                    "productId": 34,
+                    "productName": "Vim Dishwash Liquid Gel Lemon 500ml Refill Pouch",
+                    "qty": 1,
+                    "price": 190,
+                    "orderMasterId": 4
+                },
+                {
+                    "id": 15,
+                    "productId": 35,
+                    "productName": "Pril Kraft Dish Washing Liquid - 750 ml",
+                    "qty": 1,
+                    "price": 190,
+                    "orderMasterId": 4
+                },
+                {
+                    "id": 16,
+                    "productId": 32,
+                    "productName": "Harpic Powerplus Disinfectant Toilet Cleaner, Original - 1 L",
+                    "qty": 1,
+                    "price": 190,
+                    "orderMasterId": 4
+                },
+                {
+                    "id": 17,
+                    "productId": 33,
+                    "productName": "Dettol Liquid Disinfectant for Multi-Purpose Germ Protection, Menthol Cool, 200ml",
+                    "qty": 1,
+                    "price": 190,
+                    "orderMasterId": 4
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "customerId": 1,
+            "shopId": 2,
+            "status": "completed",
+            "createdAt": "2020-10-16T08:45:10.2933333Z",
+            "deliveryAddress": "{\"id\":1,\"savedAs\":\"home\",\"coordinate\":{\"latitude\":9.173591,\"longitude\":76.555973},\"houseDetail\":\"Check\",\"landmark\":\"Ok\"}",
+            "shopName": "Grocery Store",
+            "shopImage": "https://nxtshops.com/assets/images/dist3/distpoint3/Avees.jpg",
+            "items": [
+                {
+                    "id": 9,
+                    "productId": 54,
+                    "productName": "Maggi 2-Minute Instant Noodles - Masala, 560g",
+                    "qty": 1,
+                    "price": 100,
+                    "orderMasterId": 3
+                },
+                {
+                    "id": 10,
+                    "productId": 39,
+                    "productName": "Britannia Little Hearts, 34.5g",
+                    "qty": 1,
+                    "price": 180,
+                    "orderMasterId": 3
+                },
+                {
+                    "id": 11,
+                    "productId": 55,
+                    "productName": "Mothers Recipe Delhi Chaat Chutney Pouch, 200 g",
+                    "qty": 1,
+                    "price": 100,
+                    "orderMasterId": 3
+                },
+                {
+                    "id": 12,
+                    "productId": 56,
+                    "productName": "Kissan Mix Fruit Jam, 500g Jar",
+                    "qty": 1,
+                    "price": 100,
+                    "orderMasterId": 3
+                },
+                {
+                    "id": 13,
+                    "productId": 60,
+                    "productName": "Del Monte Tomato Ketchup - Original Blend, 950g",
+                    "qty": 1,
+                    "price": 100,
+                    "orderMasterId": 3
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "customerId": 1,
+            "shopId": 2,
+            "status": "completed",
+            "createdAt": "2020-10-16T08:44:49.7266667Z",
+            "deliveryAddress": "{\"id\":1,\"savedAs\":\"home\",\"coordinate\":{\"latitude\":9.173591,\"longitude\":76.555973},\"houseDetail\":\"Check\",\"landmark\":\"Ok\"}",
+            "shopName": "Grocery Store",
+            "shopImage": "https://nxtshops.com/assets/images/dist3/distpoint3/Avees.jpg",
+            "items": [
+                {
+                    "id": 5,
+                    "productId": 51,
+                    "productName": "Daawat Rozana Super Basmati Rice, 5kg",
+                    "qty": 1,
+                    "price": 120,
+                    "orderMasterId": 2
+                },
+                {
+                    "id": 6,
+                    "productId": 41,
+                    "productName": "Amul Butter - Pasteurised, 100g Pack",
+                    "qty": 1,
+                    "price": 140,
+                    "orderMasterId": 2
+                },
+                {
+                    "id": 7,
+                    "productId": 42,
+                    "productName": "Amul Butter - Pasteurised, 500g Pack",
+                    "qty": 1,
+                    "price": 155,
+                    "orderMasterId": 2
+                },
+                {
+                    "id": 8,
+                    "productId": 47,
+                    "productName": "Tata Salt, 1Kg",
+                    "qty": 1,
+                    "price": 140,
+                    "orderMasterId": 2
+                }
+            ]
+        }
+    ],
+    "services": [
+        {
+            "id": 3,
+            "customerId": 1,
+            "status": "completed",
+            "type": "breakdown",
+            "image": null,
+            "deliveryAddress": "{\"coordinate\":{\"latitude\":9.1735103,\"longitude\":76.5562314},\"houseDetail\":\"Alappuzha\",\"landmark\":\"Choonad-Thazhava mukku Road\"}",
+            "createdAt": "2020-10-17T10:11:55.2366667Z",
+            "serviceProviderName": "Motor Work Shop",
+            "items": [
+                {
+                    "id": 3,
+                    "productId": null,
+                    "productName": "Breakdown Assistance",
+                    "json": "{\"PackageItemName\":\"Breakdown Assistance\",\"Description\":\"Ok\",\"destination\":{\"latitude\":9.174842199999999,\"longitude\":76.50133520000001,\"houseDetail\":\"Kayamkulam\",\"landmark\":\"Kayamkulam, Kerala, India\"}}",
+                    "remark": null,
+                    "image": null,
+                    "quoteMasterId": 3
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "customerId": 1,
+            "status": "completed",
+            "type": "repair",
+            "image": null,
+            "deliveryAddress": "{\"id\":1,\"savedAs\":\"home\",\"coordinate\":{\"latitude\":9.173591,\"longitude\":76.555973},\"houseDetail\":\"Check\",\"landmark\":\"Ok\"}",
+            "createdAt": "2020-10-17T10:11:29.2500000Z",
+            "serviceProviderName": "Motor Work Shop",
+            "items": [
+                {
+                    "id": 2,
+                    "productId": null,
+                    "productName": "Two Wheeler",
+                    "json": "{\"deliveryDate\":\"2020-10-17T18:30:00.000Z\",\"symptoms\":[\"Oil Leaking\",\"Too much engine noise\"]}",
+                    "remark": null,
+                    "image": null,
+                    "quoteMasterId": 2
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "customerId": 1,
+            "status": "completed",
+            "type": "package",
+            "image": null,
+            "deliveryAddress": "{\"id\":1,\"savedAs\":\"home\",\"coordinate\":{\"latitude\":9.173591,\"longitude\":76.555973},\"houseDetail\":\"Check\",\"landmark\":\"Ok\"}",
+            "createdAt": "2020-10-17T09:02:23.2633333Z",
+            "serviceProviderName": "Garage Shop",
+            "items": [
+                {
+                    "id": 1,
+                    "productId": null,
+                    "productName": "General check-up",
+                    "json": "{\"PackageItemsId\":33,\"PackageItemName\":\"Below 180 CC\",\"PackageId\":31,\"Description\":null,\"Active\":1,\"Rate\":950,\"OfferRate\":600}",
+                    "remark": null,
+                    "image": null,
+                    "quoteMasterId": 1
+                }
+            ]
+        }
+    ]
+}
