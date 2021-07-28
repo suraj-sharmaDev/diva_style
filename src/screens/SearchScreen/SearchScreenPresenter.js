@@ -22,6 +22,7 @@ const Theme = styled.View`
 
 const SearchScreenPresenter = ({navigation, ...props}) => {
 	const [selectedId, setSelectedId] = useState(null);
+	
 	useEffect(() => {
 		abortController = new AbortController();
 		initialization();
@@ -29,15 +30,18 @@ const SearchScreenPresenter = ({navigation, ...props}) => {
 			abortController._abort();			
 		}
 	},[props.address]);
+
 	const initialization = () => {
 		if(!props.address.serviceUnavailable)
 		{
 			GetCategories()
 			.then((result)=>{
 				if(!abortController._signal()){
-					DATA = result;			
-					selectedCategory = DATA[0];		
-					setSelectedId(DATA[0].id);
+					DATA = result;
+					if (result.length > 0) {
+						selectedCategory = DATA[0];		
+						setSelectedId(DATA[0].id);
+					}
 				}
 			})
 			.catch((err)=>{
@@ -45,12 +49,15 @@ const SearchScreenPresenter = ({navigation, ...props}) => {
 			})
 		}
 	}
+	
 	const onSelect = (categoryId, index) => {
 		// console.warn(categoryId, index);
 		selectedCategory = DATA[index];
 		setSelectedId(categoryId);
 	};
+
 	let content = <LoadingScreen />;
+	
 	if(props.address.serviceUnavailable){
 		content = (
 			<React.Fragment>

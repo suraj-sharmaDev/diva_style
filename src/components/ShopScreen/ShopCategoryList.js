@@ -18,7 +18,7 @@ const Label = styled.Text`
 `;
 const ShopCategoryList = ({categoryList, onlineStatus, ...props}) => {
 	//flatlist column should be in match to width of screen
-	let numColumns = width > 420 ? 5 : 4; 
+	let numColumns = width > 420 ? 4 : 3;
 	let content = (
 		<Container contentContainerStyle={{paddingBottom: 80}}>
 			<Label>Categories</Label>

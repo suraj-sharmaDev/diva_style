@@ -6,7 +6,9 @@ import ShopQuantityButton from '../ShopScreenCategory/ShopQuantityButton';
 import Colors from '../../constants/Colors';
 import Fonts from '../../constants/Fonts';
 
-const Container = styled.View``;
+const Container = styled.View`
+    margin-top: 50px;
+`;
 
 const View = styled.View``;
 const Label = styled.Text`
@@ -17,9 +19,10 @@ const Label = styled.Text`
 `;
 const Image = styled.Image`
   background-color : ${Colors.searchBarColor};
-  width : 170px;
+  width : 160px;
   height : 80px;
   resize-mode: center;
+  margin-bottom: 10px;
 `;
 const Text = styled.Text``;
 
@@ -58,7 +61,6 @@ const Item = ({product, onlineStatus}) => {
 }
 const RecommendedProducts = ({products, onlineStatus, ...props}) => {
     let content = null;
-    return null;
     if(products != null){
         content = (
             <Container>

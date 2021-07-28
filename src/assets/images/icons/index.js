@@ -24,6 +24,7 @@ export default {
     "cleaning_cupboard": require("./cleaning_cupboard.png"),
     "cleaning_service": require("./cleaning_service.png"),
     "clothing": require("./clothing.png"),
+    "clothes": require("./clothing.png"),
     "confectionery": require("./confectionery.png"),
     "cutleries": require("./cutleries.png"),
     "dental_health_care": require("./dental_health_care.png"),

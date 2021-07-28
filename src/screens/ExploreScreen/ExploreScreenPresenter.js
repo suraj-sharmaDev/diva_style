@@ -20,17 +20,24 @@ const Theme = styled.View`
 const Text = styled.Text``;
 const ExploreScreenPresenter = ({navigation, ...props}) => {
   const [selectedId, setSelectedId] = useState(null); 
-  const refresh = false;
+
   useEffect(() => {
     initialization();
   },[]);
+
   const initialization = () => {
     currentCategoryData = navigation.getParam('categoryData');
     currentId = navigation.getParam('selectedId');
     currentIndex = navigation.getParam('index');
     subCategory = currentCategoryData.subCategories[currentIndex];
     subCategoryChildren = subCategory.subCategoryChildren;
-    fetchProducts(subCategoryChildren[0].id);
+    if (subCategoryChildren[0]?.id) {
+      fetchProducts(subCategoryChildren[0]?.id);
+    } else {
+      // if there is not ids passed
+      global.products = null;
+      setSelectedId(undefined);
+    }
   }
   const fetchProducts = (subCategoryChildId) => {
     let coordinates = null;
@@ -50,7 +57,9 @@ const ExploreScreenPresenter = ({navigation, ...props}) => {
   }
   const onSelect = (id, index) => {
     selectedCategory = subCategoryChildren[index];
-    fetchProducts(selectedCategory.id);
+    if(selectedCategory?.id) {
+      fetchProducts(selectedCategory.id);
+    }
   };
 
   let content = <ExploreScreenLoader />;

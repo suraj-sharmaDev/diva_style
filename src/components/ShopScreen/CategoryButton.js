@@ -8,8 +8,8 @@ const CategoryItem = styled.TouchableOpacity`
   flex-direction : column;
   align-items : center;
   justify-content: space-between;
-  width : 75px;
-  height : 75px;
+  width : 100px;
+  height : 100px;
   margin-vertical: 5px;
   margin-horizontal: 4px;
   border-top-start-radius : 10px;
@@ -22,12 +22,12 @@ const CategoryItem = styled.TouchableOpacity`
 
 const Image = styled.Image`
   border-radius: 12px;
-  height: 30px;
-  width: 30px;
+  height: 60px;
+  width: 60px;
 `;
 
 const CategoryName = styled.Text`
-	font-size : 12px;
+	font-size : 13px;
 	font-family : ${Fonts.normalFont};
   color : ${Colors.darkGreyColor};
   padding : 0px 5px;
