@@ -107,6 +107,7 @@ export default {
     "salted_nuts": require("./salted_nuts.png"),
     "shampoo": require("./shampoo.png"),
     "shirts": require("./shirts.png"),
+    "shops": require("./shops.png"),
     "shower_bath": require("./shower_bath.png"),
     "snacks": require("./snacks.png"),
     "sofa_repair_service": require("./sofa_repair_service.png"),

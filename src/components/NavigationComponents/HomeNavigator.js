@@ -47,7 +47,7 @@ const HomeNavigator = props => {
 		<Container>
 			<HalfView></HalfView>
 			<View>
-				<Label style={{color: 'white'}}>Our Services</Label>			
+				<Label style={{color: 'white'}}>Services</Label>			
 				<ButtonGroup>
 					<Button onPress={()=>props.navigation.navigate('Home')}
 						style={{alignItems: 'flex-start'}}

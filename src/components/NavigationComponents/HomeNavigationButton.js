@@ -22,7 +22,7 @@ const HomeNavigationButton = ({ label, active }) => {
 	let iconImage = "";
 	switch (label) {
 		case 'shops':
-			iconImage = require('../../assets/images/shops.png');
+			iconImage = require('../../assets/images/icons/shops.png');
 			break;
 		case 'services':
 			iconImage = require('../../assets/images/services.png');
