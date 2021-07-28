@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import RNBootSplash from "react-native-bootsplash";
+import NetInfo from "@react-native-community/netinfo";
 
 import GeolocationService from '../middleware/GeolocationService';
 import {AlertService} from '../middleware/AlertService';
@@ -14,10 +15,13 @@ import {logout} from '../store/actions/user';
 
 import LoginNavigator from "./LoginNavigator";
 import AppNavigator from "./AppNavigator";
-
+import NetworkServiceOffline from '../components/NetworkServiceOffline';
 
 const AuthNavigator = (props) => {
 	const [initialized, updateInitialized] = React.useState(null);
+	const [pendingApi, setPendingApi] = React.useState([]);
+	const [isConnected, setConnected] = React.useState(true);
+
 	React.useEffect(()=>{
 		//After login is done we have to refresh our localstorage
 		//for saved addresses and other details stored in cloud
@@ -32,18 +36,46 @@ const AuthNavigator = (props) => {
 		}
 	},[props.user])
 
+	React.useEffect(()=>{
+		// Subscribe
+		const networkListener = NetInfo.addEventListener(state => {
+			if(state.isConnected) {
+				if (pendingApi.length !== 0) {
+					const resolve = [...pendingApi];
+					setPendingApi([]);
+					resolve.map((r)=>r());
+				}
+				setConnected(true);
+			}else {
+				setConnected(false);
+			}
+		});
+
+		return ()=>{
+			// unsubscribe networkListener
+			networkListener();
+		}
+	});
+	
 	const onLocation = (data) => {
-		coordinates = data;
-		if(typeof coordinates == 'undefined'){
-			coordinates = null;
-		}
-		if(props.user.skipped && !props.user.loggedIn){
-			skipLoginHandler();
-		}else{
-			appInitializer();
-		}
+		NetInfo.fetch().then(async (state) => {
+			if (state.isConnected) {
+				coordinates = data;
+				if(typeof coordinates == 'undefined'){
+					coordinates = null;
+				}
+				if(props.user.skipped && !props.user.loggedIn){
+					skipLoginHandler();
+				}else{
+					appInitializer();
+				}		
+			} else {
+				setPendingApi([...pendingApi, ()=>onLocation(data)]);
+			}
+		});
 		// props.logoutHandler()
 	}
+
 	const appInitializer = async() => {
 		if(initialized===null ){
 			Initialize(props.user.userId)
@@ -92,6 +124,9 @@ const AuthNavigator = (props) => {
 	}
 	let content = null;
 
+	if (!isConnected && initialized===null) {
+		content = <NetworkServiceOffline/>;
+	}
 	if((props.user.loggedIn && props.user.verified) || props.user.skipped ){
 		//initialize app only when user has been verified and not already initialized
 		if(initialized === 'initialized'){
