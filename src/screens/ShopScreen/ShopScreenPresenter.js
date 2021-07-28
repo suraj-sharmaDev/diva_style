@@ -47,7 +47,7 @@ const ShopScreenPresenter = ({navigation, Shop }) => {
 											 categoryId : item.categoryId,
 											 subCategoryId : data.subCategoryId, 
 											 subCategoryChildId : data.subCategoryChildId,
-											 onlineStatus : Shop.shop.onlineStatus
+											 onlineStatus : Shop?.shop?.onlineStatus || 1
 											});
 	} 		
 	let content = null;

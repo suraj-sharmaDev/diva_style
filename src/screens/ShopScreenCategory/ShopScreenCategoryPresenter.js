@@ -97,7 +97,11 @@ const ShopScreenCategoryPresenter = ({navigation, parentProps, ...props }) => {
 	}
 	const fetchStock = async(shopId, subCategoryId) => {
 		const result = await ShopStocksBySubCategory(parentProps.items.shopId, subCategoryId);
-		props.addToCache({category: result, shopId: shopId});
+		try {
+			props.addToCache({category: result, shopId: shopId});	
+		} catch (error) {
+			console.log(error);
+		}
 		return result;
 	}
 

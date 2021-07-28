@@ -49,10 +49,12 @@ const createNewArray = (array, data) => {
 				title : category.title,
 				data: [],					
 			};
-			for (product of category.data) {
-				subCategoryChild.data.push(
-					product
-				);
+			if (category?.data) {
+				for (product of category.data) {
+					subCategoryChild.data.push(
+						product
+					);
+				}
 			}
 			pushData.subCategories[0].subCategoryChild.push(subCategoryChild);
 			subCategoryIndex++;			
@@ -72,10 +74,12 @@ const createNewArray = (array, data) => {
 					},
 				],
 			};
-			for (product of category.data) {
-				pushData.subCategories[0].subCategoryChild[0].data.push(
-					product
-				);
+			if (category?.data) {
+				for (product of category.data) {
+					pushData.subCategories[0].subCategoryChild[0].data.push(
+						product
+					);
+				}
 			}
 			subCategoryIndex++;
 		}
@@ -87,9 +91,7 @@ const createNewArray = (array, data) => {
 		return pushData;
 	}	
 }
-const pushToArray = (array, data) => {
 
-}
 const onAddToCacheFromSearch = (state, data) => {
 	let newState = {...state};
 	if(newState.shopId==0 || newState.shopId!=data.shopId){

@@ -46,15 +46,15 @@ const _renderHeader = ({title}) => {
   );
   return content;
 }
-const ProductsList = props => {
-  console.log(props.products)
+const ProductsList = ({products, ...props}) => {
+  console.log(products)
   let content = null;
-  if (props.products !== undefined) {
+  if (products && products.length > 0) {
     content = (
       <Container>
         <SectionList
           ref={_listRef}
-          sections={props.products}
+          sections={products}
           renderItem={({item})=>
                     <ProductItem 
                       item={item} 

@@ -121,37 +121,61 @@ const CartScreenPresenter = ({navigation, store, address, ...props}) => {
             theme: {color: Colors.greenColor}
           }
           /**
-           * After all the options has been setup we now need to call razorPay Api
+           * NOTE: This version of app is for Nepal only so razorpay Api is commented for use.
+           * Only COD available
            */
-          updateLoading(true);          
-          Razorpay.razorPayment(options)
-          .then((result)=>{
-            let paymentData = {...result};
+           updateLoading(true);
+            let paymentData = {};
             paymentData.orderType = 'order';
             paymentData.orderQuoteId = nxtstoresOrderId;
             paymentData.totalAmount = totalAmount;
-            /**
-             * When the payment is successful call FinalizePaymentApi
-             */
-            FinalizePayment(paymentData)
-            .then((res)=>{
-              if(!res.error){
-                //empty cart before going to orders page
-                props.trackStart();
-                navigation.navigate('Orders');
-              }else{
-                AlertService('Oops','Payment was successful, but we faced server issues. Please contact customer care!', ()=>{});
-              }
-            })
-            .catch((err)=>{
-              updateLoading(false)
-            })
-          })
-          .catch((err)=>{
-            updateLoading(false)            
-            AlertService('Oops','Payment was unsuccessful, please try again!', ()=>{});
-            console.warn(err)
-          });
+           FinalizePayment(paymentData)
+           .then((res)=>{
+             if(!res.error){
+               //empty cart before going to orders page
+               props.trackStart();
+               navigation.navigate('Orders');
+             }else{
+               AlertService('Oops','Payment was successful, but we faced server issues. Please contact customer care!', ()=>{});
+             }
+           })
+           .catch((err)=>{
+             updateLoading(false)
+           })
+
+          
+          /**
+           * After all the options has been setup we now need to call razorPay Api
+           */
+          // updateLoading(true);          
+          // Razorpay.razorPayment(options)
+          // .then((result)=>{
+          //   let paymentData = {...result};
+          //   paymentData.orderType = 'order';
+          //   paymentData.orderQuoteId = nxtstoresOrderId;
+          //   paymentData.totalAmount = totalAmount;
+          //   /**
+          //    * When the payment is successful call FinalizePaymentApi
+          //    */
+          //   FinalizePayment(paymentData)
+          //   .then((res)=>{
+          //     if(!res.error){
+          //       //empty cart before going to orders page
+          //       props.trackStart();
+          //       navigation.navigate('Orders');
+          //     }else{
+          //       AlertService('Oops','Payment was successful, but we faced server issues. Please contact customer care!', ()=>{});
+          //     }
+          //   })
+          //   .catch((err)=>{
+          //     updateLoading(false)
+          //   })
+          // })
+          // .catch((err)=>{
+          //   updateLoading(false)            
+          //   AlertService('Oops','Payment was unsuccessful, please try again!', ()=>{});
+          //   console.warn(err)
+          // });
         }else{
           updateLoading(false)          
           AlertService('Error','Server issue, sorry for inconvenience!', ()=>{});
