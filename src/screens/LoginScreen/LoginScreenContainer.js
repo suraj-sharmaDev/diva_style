@@ -56,8 +56,8 @@ class LoginScreenContainer extends Component {
       console.warn(err)
     })
   };
-  onLogin = (mobile) => {
-    let formData = {"mobile": mobile};
+  onLogin = (mobile, password) => {
+    let formData = {"mobile": mobile, "password": password};
     //Call the API
     Login(formData)
     .then((value)=>{

@@ -13,18 +13,21 @@ const LoginNavigator = (props) => {
   if(!props.user.loggedIn && !props.user.verified){
     return <LoginScreen loginHandler={props.loginHandler}/>;
   }
-  else if(!props.user.verified){
-    return (
-      <VerificationScreen
-        verify={props.verifyHandler}
-        changeNumber={props.logoutHandler}
-        user={props.user}
-      />
-    );
-  }  
-  else{
+  // if user not verified take to otp entering screen
+  // else if(!props.user.verified){
+  //   return (
+  //     <VerificationScreen
+  //       verify={props.verifyHandler}
+  //       changeNumber={props.logoutHandler}
+  //       user={props.user}
+  //     />
+  //   );
+  // }
+  // entering user credential screen
+  else if ((props.user.userName === null || props.user.userName.length === 0) ){
     return <CredentialScreen userId={props.user.userId} credentialHandler={props.credentialHandler} /> 
   }
+  return null;
 }
 
 const mapStateToProps = state =>{

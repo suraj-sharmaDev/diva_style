@@ -2,7 +2,7 @@ import { LOGIN, SKIPLOGIN, CREDENTIAL, VERIFY, LOGOUT, SUBSCRIBE, UPDATE_CUSTOME
 
 const initalState = {
 	userId : null,
-	userName : null,
+	userName : "",
 	userMobile : null,
 	fcmToken : null,
 	apiKey : null,
@@ -43,6 +43,7 @@ const login = (state, data) => {
 	newState.userId = data.id;
 	newState.userName = data.name;
 	newState.userMobile = data.mobile;
+	newState.verified = true;
 	// newState.skipped = true;
 	newState.loggedIn = true;
 	return newState;
@@ -60,7 +61,7 @@ const verify = (state) => {
 const logout = () => {
 	newState = {	
 		userId : null,
-		userName : null,
+		userName : "",
 		userMobile : null,
 		fcmToken : null,
 		apiKey : null,

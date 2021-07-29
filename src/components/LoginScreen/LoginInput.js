@@ -23,22 +23,37 @@ const Input = styled.TextInput`
 const Text = styled.Text`
 	font-family  : ${Font.normalFont};
 `;
-const LoginInput = ({inputMobile, code}) =>{
-	const codeLength = code.length;
-	const width = codeLength > 2 ? codeLength * 10 + 50 : 50;
-	let content = (
-		<InputView>
-			<Code style={{ width : width}}>
-				<Text style={{color: Color.darkGreyColor, fontSize: 19, padding : 0, marginTop : -3}}>+{code}</Text>
-			</Code>
-			<Input
-				placeholder="Enter Mobile Number"
-				keyboardType="numeric"
-				style={{fontSize: 16}}
-				onChangeText={e => inputMobile(e)}
-			/>
-		</InputView>
-	);
+const LoginInput = ({inputMobile, code, type = "number"}) =>{
+	let content = null;
+	if(type==="number") {
+		const codeLength = code.length;
+		const width = codeLength > 2 ? codeLength * 10 + 50 : 50;
+		content = (
+			<InputView>
+				<Code style={{ width : width}}>
+					<Text style={{color: Color.darkGreyColor, fontSize: 19, padding : 0, marginTop : -3}}>+{code}</Text>
+				</Code>
+				<Input
+					placeholder="Enter Mobile Number"
+					keyboardType="numeric"
+					style={{fontSize: 16}}
+					onChangeText={e => inputMobile(e)}
+				/>
+			</InputView>
+		);
+	} else {
+		content = (
+			<InputView>
+				<Code style={{ width : 20}}>
+				</Code>
+				<Input
+					placeholder="Enter Password"
+					style={{fontSize: 16}}
+					onChangeText={e => inputMobile(e)}
+				/>
+			</InputView>
+		);		
+	}
 	return content;
 }
 

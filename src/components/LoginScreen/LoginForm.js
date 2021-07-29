@@ -30,35 +30,51 @@ const Text = styled.Text`
 const LoginForm = props => {
 	const [isLoading, updateLoading] = React.useState(true);	
     const [show, updateShow] = React.useState(false);  //actual initial value is true
-    const [mobile, updateMobile] = React.useState(0);
+    const [mobile, updateMobile] = React.useState('');
+	const [password, updatePassword] = React.useState('');
     const [disabled, updateDisabled] = React.useState(true);
     React.useEffect(()=>{
 		global.get_country = CountryToCode(props.country.trim());
 		updateLoading(false);    	
     },[])
+	
 	const screenCheck = event => {
 		//since for now referral code is not being used we comment it for future use
 		// if (event.nativeEvent.layout.height <= height*0.30) updateShow(false);
 		// else updateShow(true); 
 	};
+	
 	const inputMobile = (data) => {
-		if(data.length === 10){
+		updateMobile(data);
+		if (data.length === 10 && password.length > 4) {
 			updateDisabled(false);
-		}else if(!disabled){
+		} else {
 			updateDisabled(true);
 		}
-		updateMobile(data);
 	}
+	
+	const inputPassword = data => {
+		updatePassword(data);
+		if (data.length > 4 && mobile.length === 10) {
+			updateDisabled(false);
+		} else {
+			updateDisabled(true);
+		}
+	}
+
 	const loginHandler = () => {
 		updateDisabled(true);		
-		props.clickHandler(`+${global.get_country.Phone}${mobile}`);
+		props.clickHandler(`+${global.get_country.Phone}${mobile}`, password);
 	}
+	
 	let content=null;
+	
 	if(!isLoading){
 		content = (
 			<Form onLayout={event=> screenCheck(event)}>
 				<Text style={{color: Color.darkGreyColor, fontSize: 20}}>Get Started!</Text>
 				<LoginInput inputMobile={inputMobile} code={global.get_country.Phone}/>
+				<LoginInput inputMobile={inputPassword} type={"password"} />
 				{
 					show
 					?

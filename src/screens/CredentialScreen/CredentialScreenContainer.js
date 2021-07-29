@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CredentialScreenPresenter from "./CredentialScreenPresenter";
 import {UpdateUsername} from "../../middleware/API"; 
+import {AlertService} from '../../middleware/AlertService';
 
 class CredentialScreenContainer extends Component {
   static navigationOptions = {
@@ -8,9 +9,10 @@ class CredentialScreenContainer extends Component {
   };
   onCredential = (userName) => {
     if(userName.length > 3){
-      let formData = new FormData();
-      formData.append('customerId', this.props.userId);      
-      formData.append('customerName', userName);
+      let formData = {
+        customerId: this.props.userId,
+        name: userName,
+      }
       //Call the API
       UpdateUsername(formData)
       .then((value)=>{

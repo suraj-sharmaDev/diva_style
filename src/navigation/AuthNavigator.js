@@ -37,6 +37,7 @@ const AuthNavigator = (props) => {
 	},[props.user])
 
 	React.useEffect(()=>{
+		// props.logoutHandler()
 		// Subscribe
 		const networkListener = NetInfo.addEventListener(state => {
 			if(state.isConnected) {
@@ -127,7 +128,7 @@ const AuthNavigator = (props) => {
 	if (!isConnected && initialized===null) {
 		content = <NetworkServiceOffline/>;
 	}
-	if((props.user.loggedIn && props.user.verified) || props.user.skipped ){
+	if((props.user.loggedIn && props.user.verified && props.user.userName) || props.user.skipped ){
 		//initialize app only when user has been verified and not already initialized
 		if(initialized === 'initialized'){
 			content = <AppNavigator />;

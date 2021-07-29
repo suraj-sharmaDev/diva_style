@@ -51,12 +51,14 @@ export const Verify = async (data) => {
 	return result;	
 }
 export const UpdateUsername = async (data) => {
-	const response = await fetch(UpdateUsernameApi,{
-		method : 'POST',
+	const {customerId, ...rest} = data;
+	const url = `${UpdateUsernameApi}/${customerId}`;
+	const response = await fetch(url,{
+		method : 'PUT',
 		headers : {
 			'Content-Type': 'application/json'
 		},
-    	body : JSON.stringify(data)
+    	body : JSON.stringify(rest)
 	});
 	const result = await response.json();
 	return result;
