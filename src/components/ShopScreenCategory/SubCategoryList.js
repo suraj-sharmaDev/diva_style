@@ -37,7 +37,7 @@ const CategoryName = styled.Text`
 `;
 const Item = ({info, index, selected, setSelected}) => {
 	const backgroundColor = info.subCategoryId ==selected ? Colors.greenColor : Colors.greyColor; 
-	const color = info.subCategoryId ==selected ? Colors.greyColor : Colors.darkGreyColor;
+	const color = info.subCategoryId ==selected ? Colors.homeBackgroundColor : Colors.darkGreyColor;
 	let content = (
 		<CategoryItem style={{backgroundColor}} onPress={()=>setSelected(info.subCategoryId)}>
 			<CategoryName numberOfLines={2} style={{color}}>{info.subCategoryName}</CategoryName>
