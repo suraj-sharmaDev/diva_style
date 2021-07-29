@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Color from '../../constants/Colors';
 import Font from "../../constants/Fonts";
 
@@ -12,7 +13,7 @@ const InputView = styled.View`
 	background-color: ${Color.searchBarColor};
 	border-radius: 12px;
 `;
-const Code = styled.View`
+const Code = styled.TouchableOpacity`
 	justify-content: center;
 	align-items: center;	
 	padding: 0px 2px 0px 0px;
@@ -24,6 +25,7 @@ const Text = styled.Text`
 	font-family  : ${Font.normalFont};
 `;
 const LoginInput = ({inputMobile, code, type = "number"}) =>{
+	const [secured, setSecured] = React.useState(true);
 	let content = null;
 	if(type==="number") {
 		const codeLength = code.length;
@@ -38,6 +40,7 @@ const LoginInput = ({inputMobile, code, type = "number"}) =>{
 					keyboardType="numeric"
 					style={{fontSize: 16}}
 					onChangeText={e => inputMobile(e)}
+					maxLength={10}
 				/>
 			</InputView>
 		);
@@ -50,7 +53,13 @@ const LoginInput = ({inputMobile, code, type = "number"}) =>{
 					placeholder="Enter Password"
 					style={{fontSize: 16}}
 					onChangeText={e => inputMobile(e)}
+					secureTextEntry={secured}
+					style={{width: '70%'}}
+					maxLength={20}
 				/>
+				<Code style={{ width : 30, marginLeft: 30}} onPress={() => setSecured(!secured)}>
+					<Icons name={secured ? "eye-outline" : "eye-off-outline"} size={25} />
+				</Code>				
 			</InputView>
 		);		
 	}
