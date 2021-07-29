@@ -75,7 +75,7 @@ const ShopQuantityButton = ({item, ...props }) => {
 		if(data.name==='none'){
 			onIncrement(item.shopId, item.productId, item.name, item.price);
 		}else{
-			name = `${item.name} ${data.name}`;
+			let name = `${item.name} ${data.name}`;
 			price = parseInt(item.price) + parseInt(data.amount);
 			onIncrement(item.shopId, item.productId, name, price);			
 		}

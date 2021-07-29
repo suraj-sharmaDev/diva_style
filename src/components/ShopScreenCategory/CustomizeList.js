@@ -18,12 +18,17 @@ const Container = styled.View`
 	border-width : 1px;
 	border-color : ${Color.greyColor};
 `;
-const View = styled.View``;
+const View = styled.View`
+	flex: 1;
+	flex-direction: row;
+	align-items: center;
+`;
 const Header = styled.View`
 	padding : 4px;
 	width : ${width*0.8};
 	border-bottom-width : 1px;
-	border-bottom-color : ${Color.greyColor};	
+	border-bottom-color : ${Color.greyColor};
+	margin-bottom: 10px;
 `;
 const HeaderText = styled.Text`
 	font-family : ${Font.normalFont};
@@ -36,10 +41,11 @@ const ListItem = styled.TouchableOpacity`
 	flex-direction : row;
 	justify-content : space-between;
 	align-items : center;
+	margin-bottom: 10px;
 `;
 const Label = styled.Text`
 	color : ${Color.darkGreyColor};
-	text-transform : capitalize;
+	text-transform : uppercase;
 	font-size : 14px;
 	font-family : ${Font.normalFont};
 `;
@@ -48,6 +54,7 @@ const SubLabel = styled.Text`
 	text-transform : capitalize;
 	font-size : 12px;
 	font-family : ${Font.normalFont};
+	margin-left: 10px;
 `;
 const CustomizeList = ({extras, active, updateActive, onCustomiseHandler}) => {
 	const [selected, setSelected] = React.useState(null);
@@ -58,48 +65,56 @@ const CustomizeList = ({extras, active, updateActive, onCustomiseHandler}) => {
 		onCustomiseHandler(data);
 	}
 
-	let modalBody = [
-						<Header key={0}><HeaderText>Customize</HeaderText></Header>,
-						<ListItem key={1} activeOpacity={1}>
-							<Label>Normal</Label>
-							<CheckBox 
-								onPress={()=>onOptionSelect({name:'none', amount:0})}
-								checked={selected==='none'?true:false}
-							/>
-						</ListItem>
-					];
-
-	for(var key in extras){
-		modalBody.push(
-			<ListItem key={key} activeOpacity={1}>
-				<View>
-					<Label>{key}</Label>
-					<SubLabel>additional Rs {extras[key]}</SubLabel>					
-				</View>
-				<CheckBox 
-					checked={selected===key?true:false}
-					onPress={()=>onOptionSelect({name:key, amount:extras[key]})}					
-				/>
-			</ListItem>
-		);
-	}
-
-	let content=(
-		<Modal
-		isVisible={active}
-		onBackdropPress={updateActive}
-		animationInTiming={100}
-		animationOutTiming={300}
-		deviceWidth={width}
-		deviceHeight={height}
-		backdropColor={'white'}
-		backdropOpacity={0.1}
-		style={{ justifyContent:'center', alignItems:'center', paddingBottom : 25}}>
-			<Container>
-				{modalBody}
-			</Container>
-		</Modal>
-	);
+	let content = (
+    <Modal
+      isVisible={active}
+      onBackdropPress={updateActive}
+      animationInTiming={100}
+      animationOutTiming={300}
+      deviceWidth={width}
+      deviceHeight={height}
+      backdropColor={'white'}
+      backdropOpacity={0.6}
+      style={{
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingBottom: 25,
+      }}>
+      <Container>
+        <Header key={0}>
+          <HeaderText>Customize Selection</HeaderText>
+        </Header>
+        <ListItem
+          key={1}
+          activeOpacity={1}
+          onPress={() => onOptionSelect({name: 'none', amount: 0})}>
+          <Label>Normal</Label>
+          <CheckBox
+            onPress={() => onOptionSelect({name: 'none', amount: 0})}
+            checked={selected === 'none' ? true : false}
+          />
+        </ListItem>
+	  	{
+			extras.map((e)=>{
+				const name = Object.keys(e)[0];
+				const cost = e[name];
+				return (
+					<ListItem key={name} activeOpacity={1} onPress={()=>onOptionSelect({name:name, amount:cost})}>
+						<View>
+							<Label>{name}</Label>
+							<SubLabel>additional Rs {cost}</SubLabel>
+						</View>
+						<CheckBox 
+							checked={selected===name?true:false}
+							onPress={()=>onOptionSelect({name:name, amount:cost})}
+						/>
+					</ListItem>
+				)
+			})
+		}
+      </Container>
+    </Modal>
+  );
 	return content;
 }
 
