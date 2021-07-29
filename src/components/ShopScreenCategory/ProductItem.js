@@ -1,5 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, TouchableOpacity} from 'react-native';
 import styled from 'styled-components';
 
 import ShopQuantityButton from './ShopQuantityButton';
@@ -25,12 +25,12 @@ const Image = styled.Image`
   height : 100%;
 `;
 
-const ProductItem = ({item, ...props}) => {
+const ProductItem = ({item, showImageViewer, ...props}) => {
   let content = (
     <Container>
-      <View style={{ width : '27%'}}>
+      <TouchableOpacity style={{ width : '27%'}} onPress={()=>showImageViewer(item)}>
         <Image source={{ uri : item.image }}/>
-      </View>
+      </TouchableOpacity>
       <View style={{ width : '45%', justifyContent : 'center', padding : 10}}>
         <Text>{item.name}</Text>
         <Text>Rs {item.price}/-</Text>

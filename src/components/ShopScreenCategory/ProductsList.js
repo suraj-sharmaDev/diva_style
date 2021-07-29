@@ -46,8 +46,7 @@ const _renderHeader = ({title}) => {
   );
   return content;
 }
-const ProductsList = ({products, ...props}) => {
-  console.log(products)
+const ProductsList = ({products, showImageViewer, ...props}) => {
   let content = null;
   if (products && products.length > 0) {
     content = (
@@ -62,6 +61,7 @@ const ProductsList = ({products, ...props}) => {
                       deliveryAvailability={props.deliveryAvailability}
                       shopId={props.shopId}
                       navigation={props.navigation}
+                      showImageViewer={showImageViewer}
                     />
           }
           renderSectionHeader={({ section: { title } }) => (

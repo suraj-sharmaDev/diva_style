@@ -13,6 +13,7 @@ import LoadingScreen from '../../components/LoadingScreen';
 import Header from "../../components/ShopScreenCategory/Header";
 import SubCategoryList from "../../components/ShopScreenCategory/SubCategoryList";
 import ProductsList from "../../components/ShopScreenCategory/ProductsList";
+import ImageViewer from "../../components/ShopScreenCategory/ImageViewer";
 import FooterCard from "../../components/ShopScreenCategory/FooterCard";
 
 const Theme = styled.View`
@@ -22,6 +23,11 @@ const Theme = styled.View`
 
 const ShopScreenCategoryPresenter = ({navigation, parentProps, ...props }) => {
 	const [selected, setSelected] = React.useState(null);
+	const [imageViewerState, setImageViewerState] = React.useState({
+		isVisible: false,
+		item: null
+	});
+
 	React.useEffect(()=>{
 		abortController = new AbortController();
 		updateSelected(parentProps.items.subCategory[0]['subCategoryId']);
@@ -108,6 +114,7 @@ const ShopScreenCategoryPresenter = ({navigation, parentProps, ...props }) => {
 	_listRef = (ref) => {
 		_list = ref;
 	}
+	
 	const scroll = (sectionIndex, itemIndex) => {
 		// updateSearchActive(false);
 		_list.scrollToLocation({
@@ -116,6 +123,21 @@ const ShopScreenCategoryPresenter = ({navigation, parentProps, ...props }) => {
          itemIndex: itemIndex
 		})
 	}
+
+	const showImageViewer = (item) => {
+		setImageViewerState({
+			isVisible: true,
+			item
+		});
+	}
+
+	const hideImageViewer = () => {
+		setImageViewerState({
+			isVisible: false,
+			item: null
+		});
+	}
+
 	if(selected===null){
 		content = <LoadingScreen />
 	}else{
@@ -137,12 +159,17 @@ const ShopScreenCategoryPresenter = ({navigation, parentProps, ...props }) => {
 					selected={selected.selected}
 					onlineStatus={parentProps.onlineStatus}
 					deliveryAvailability={parentProps.deliveryAvailability}
+					showImageViewer={showImageViewer}
 				/>
 				<FooterCard 
 					scroll={scroll}
 					productList={global.products}
 					navigation={navigation} 
-				/>	  					
+				/>
+				<ImageViewer 
+					hideImageViewer={hideImageViewer} 
+					imageViewerState={imageViewerState}
+				/>
 			</Theme>
 		);
 	}

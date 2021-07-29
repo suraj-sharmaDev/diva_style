@@ -1,8 +1,9 @@
 import React from 'react';
-import {FlatList, StyleSheet} from 'react-native';
+import {FlatList, StyleSheet, TouchableOpacity} from 'react-native';
 import styled from 'styled-components';
 
 import ShopQuantityButton from '../ShopScreenCategory/ShopQuantityButton';
+import ImageViewer from "../ShopScreenCategory/ImageViewer";
 import Colors from '../../constants/Colors';
 import Fonts from '../../constants/Fonts';
 
@@ -26,12 +27,12 @@ const Image = styled.Image`
 `;
 const Text = styled.Text``;
 
-const Item = ({product, onlineStatus}) => {
+const Item = ({product, onlineStatus, showImageViewer}) => {
     return (
         <View style={styles.productView}>
-            <View>
+            <TouchableOpacity onPress={()=>showImageViewer(product)}>
                 <Image source={{ uri : product.image }}/>
-            </View>
+            </TouchableOpacity>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
                 <View style={{flex: 0.65, justifyContent: 'flex-start'}}>
                     <Text style={styles.productName} numberOfLines={2}>{product.name}</Text>
@@ -59,7 +60,27 @@ const Item = ({product, onlineStatus}) => {
         </View>
     );
 }
+
 const RecommendedProducts = ({products, onlineStatus, ...props}) => {
+	const [imageViewerState, setImageViewerState] = React.useState({
+		isVisible: false,
+		item: null
+	});
+
+	const showImageViewer = (item) => {
+		setImageViewerState({
+			isVisible: true,
+			item
+		});
+	}
+
+	const hideImageViewer = () => {
+		setImageViewerState({
+			isVisible: false,
+			item: null
+		});
+	}
+
     let content = null;
     if(products != null){
         content = (
@@ -73,11 +94,16 @@ const RecommendedProducts = ({products, onlineStatus, ...props}) => {
                         <Item 
                             product={item}
                             onlineStatus={onlineStatus}
+                            showImageViewer={showImageViewer}
                         />
                     )}
                     keyExtractor={(item, index) => 'key'+index}
                     extraData={products}
-                />                
+                />
+				<ImageViewer 
+					hideImageViewer={hideImageViewer} 
+					imageViewerState={imageViewerState}
+				/>                         
             </Container>
         );
     }
