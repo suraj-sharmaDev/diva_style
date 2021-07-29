@@ -65,9 +65,13 @@ const ImageViewerComponent = ({imageViewerState, hideImageViewer, ...props}) => 
 
 const styles = StyleSheet.create({
     header: {
+        width: '95%',
         height: 30,
         justifyContent: 'center',
         alignItems: 'flex-end',
+        position: 'absolute',
+        top: 15,
+        zIndex: 9999
     }
 });
 
