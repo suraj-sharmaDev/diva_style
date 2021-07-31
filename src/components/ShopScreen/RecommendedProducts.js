@@ -48,7 +48,8 @@ const Item = ({product, onlineStatus, showImageViewer}) => {
                         productId : product.productId, 
                         name : product.name, 
                         price : product.price,
-                        extras : product.extras ? product.extras : null
+                        extras : product.extras ? product.extras : null,
+                        image: product.image
                     }}
                     onlineStatus={onlineStatus}
                 />

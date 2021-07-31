@@ -57,7 +57,8 @@ const CartScreenPresenter = ({navigation, store, address, ...props}) => {
           "productId": item.productId,
           "productName" : item.name,
           "price": item.price,
-          "qty": item.qty
+          "qty": item.qty,
+          "extraData": {image : item.image},
         }
 
         formData.detail.push(insertData);

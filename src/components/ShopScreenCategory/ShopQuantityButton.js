@@ -73,15 +73,15 @@ const ShopQuantityButton = ({item, ...props }) => {
 
 	const onCustomiseHandler = (data) => {
 		if(data.name==='none'){
-			onIncrement(item.shopId, item.productId, item.name, item.price);
+			onIncrement(item.shopId, item.productId, item.name, item.price, item.image);
 		}else{
 			let name = `${item.name} ${data.name}`;
 			price = parseInt(item.price) + parseInt(data.amount);
-			onIncrement(item.shopId, item.productId, name, price);			
+			onIncrement(item.shopId, item.productId, name, price, item.image);
 		}
 	}
 
-	const onAddToCartApi = (shopId, productId, name, price, prevShopId = null) => {
+	const onAddToCartApi = (shopId, productId, name, price, prevShopId = null, image = null) => {
 		let data = 	{
 			"master":{
 				"shopId": shopId,
@@ -92,7 +92,7 @@ const ShopQuantityButton = ({item, ...props }) => {
 				{
 				"productId": productId,
 				"name": name,
-				"image": null,
+				"image": image,
 				"price": price,
 				"qty": 1
 				}    
@@ -111,7 +111,7 @@ const ShopQuantityButton = ({item, ...props }) => {
 		.catch((err)=>console.warn(err))
 	}
 
-	const onIncrement = (shopId, productId, name, price) => {
+	const onIncrement = (shopId, productId, name, price, image) => {
 		if(props.address.savedAddresses.length === 0){
 			AlertService('No saved Address',"You don't have saved addresses. Create one!", ()=>{
 				props.navigation.navigate('LocationSelector')
@@ -125,7 +125,7 @@ const ShopQuantityButton = ({item, ...props }) => {
 				if(typeof selected == 'undefined'){
 					//that means this item is added for first time
 					//so post a copy to backend
-					onAddToCartApi(shopId, productId, name, price);
+					onAddToCartApi(shopId, productId, name, price, null, image);
 				}
 				props.incrementItem({
 					shopId: shopId,
@@ -133,12 +133,13 @@ const ShopQuantityButton = ({item, ...props }) => {
 					productId: productId,
 					name: name,
 					price: price,
+					image
 				});
 			}
 		}else{
 			AlertService('Cart Not Empty','Your cart contains items from other shop. \n Replace it?!', ()=>{
 				//first delete all the items from cloud belonging to previous shop
-				onAddToCartApi(shopId, productId, name, price, props.cart.shopId);				
+				onAddToCartApi(shopId, productId, name, price, props.cart.shopId, image);				
 				//then replace cart in localstorage
 				props.incrementItem({
 					shopId: shopId,
@@ -146,6 +147,7 @@ const ShopQuantityButton = ({item, ...props }) => {
 					productId: productId,
 					name: name,
 					price: price,
+					image
 				});
 			});			
 		}
@@ -174,7 +176,7 @@ const ShopQuantityButton = ({item, ...props }) => {
 				<Quantity>
 					<QuantityText>{selected.qty}</QuantityText>
 				</Quantity>
-				<Button onPress={()=>{onIncrement(item.shopId, item.productId, item.name, item.price)}}>
+				<Button onPress={()=>{onIncrement(item.shopId, item.productId, item.name, item.price, item.image)}}>
 					<Entypo name="plus" color={Colors.greenColor} />
 				</Button>
 			</ButtonContainer>
@@ -187,7 +189,7 @@ const ShopQuantityButton = ({item, ...props }) => {
 				<DefaultButtonContainer
 					disabled={props.onlineStatus==0}
 					style={{opacity : props.onlineStatus==0 ? 0.4 : 1}} 
-					onPress={()=>{item.extras!==null ? updateActive(true) : onIncrement(item.shopId, item.productId, item.name, item.price)}}
+					onPress={()=>{item.extras!==null ? updateActive(true) : onIncrement(item.shopId, item.productId, item.name, item.price, item.image)}}
 				>
 					<View style={{flex:1, flexDirection :'row', alignItems : 'center', jusitfyContent : 'center'}}>
 						<Label>Add</Label>

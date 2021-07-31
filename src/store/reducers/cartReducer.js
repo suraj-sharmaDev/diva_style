@@ -64,7 +64,13 @@ const onIncrement = (state, data) => {
     //when new data is coming in
     newState.shopId = data.shopId;
     newState.shopDeliveryAvailability = data.deliveryAvail;
-    newObj = { productId: data.productId, name: data.name, price: data.price, qty: 1 };
+    newObj = {
+      productId: data.productId,
+      name: data.name,
+      price: data.price,
+      qty: 1,
+      image: data.image,
+    };
     newState.items.push(newObj);
   }
   else if (newState.shopId !== data.shopId) {
@@ -78,7 +84,13 @@ const onIncrement = (state, data) => {
     newState.discountMinOrderAmount = 0;
     newState.discountMaxAmount = 0;
     newState.items = [];
-    newObj = { productId: data.productId, name: data.name, price: data.price, qty: 1 };
+    newObj = {
+      productId: data.productId,
+      name: data.name,
+      price: data.price,
+      qty: 1,
+      image: data.image,
+    };
     newState.items.push(newObj);
   }
   else {
@@ -101,7 +113,13 @@ const onIncrement = (state, data) => {
       }
     }
     else {
-      newObj = { productId: data.productId, name: data.name, price: data.price, qty: 1 };
+      newObj = {
+        productId: data.productId,
+        name: data.name,
+        price: data.price,
+        qty: 1,
+        image: data.image
+      };
       newState.items.push(newObj);
     }
   }

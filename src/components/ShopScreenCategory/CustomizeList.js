@@ -68,6 +68,7 @@ const CustomizeList = ({extras, active, updateActive, onCustomiseHandler}) => {
 	let content = (
     <Modal
       isVisible={active}
+	  onBackButtonPress={updateActive}
       onBackdropPress={updateActive}
       animationInTiming={100}
       animationOutTiming={300}
