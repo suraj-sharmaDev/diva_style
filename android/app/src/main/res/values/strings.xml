@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Nxtstores</string>
+    <string name="app_name">CloseBuy</string>
     <string moduleConfig="true" name="CodePushDeploymentKey">fGuX99356TPXgSgQ4q4wBrNRNMDnSoIm5qmaXN</string>    
     <string name="default_notification_channel_id">nxtstore123</string>
 </resources>

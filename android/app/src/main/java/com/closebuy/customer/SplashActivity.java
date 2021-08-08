@@ -1,4 +1,4 @@
-package com.nxtstores.customer;
+package com.closebuy.customer;
 
 import android.content.Intent;
 import android.os.Bundle;

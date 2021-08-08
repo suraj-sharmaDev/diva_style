@@ -1,4 +1,4 @@
-package com.nxtstores.customer;
+package com.closebuy.customer;
 
 import com.facebook.react.ReactActivity;
 
