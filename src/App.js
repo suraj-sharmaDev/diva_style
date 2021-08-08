@@ -30,10 +30,10 @@ class App extends Component
   }
 }
 
-// let updateOptions = {
-//   checkFrequency: CodePush.CheckFrequency.ON_APP_START
-// }
+let updateOptions = {
+  checkFrequency: CodePush.CheckFrequency.ON_APP_START
+}
 
-// App = CodePush(updateOptions)(App);
+App = CodePush(updateOptions)(App);
 
 export default App;
