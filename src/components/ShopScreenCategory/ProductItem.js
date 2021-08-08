@@ -19,6 +19,12 @@ const Text = styled.Text`
   color : ${Colors.darkGreyColor};
   text-transform : capitalize;
 `;
+const OfferText = styled.Text`
+  font-size : 11px;
+  font-family  : ${Fonts.normalFont};
+  color : ${Colors.greenColor};
+  text-transform : capitalize;
+`;
 const Image = styled.Image`
   background-color : ${Colors.preLoadingColor};
   width : 100%;
@@ -26,6 +32,7 @@ const Image = styled.Image`
 `;
 
 const ProductItem = ({item, showImageViewer, ...props}) => {
+  console.warn(item);
   let content = (
     <Container>
       <TouchableOpacity style={{ width : '27%'}} onPress={()=>showImageViewer(item)}>
@@ -33,6 +40,11 @@ const ProductItem = ({item, showImageViewer, ...props}) => {
       </TouchableOpacity>
       <View style={{ width : '45%', justifyContent : 'center', padding : 10}}>
         <Text>{item.name}</Text>
+        {
+          (item?.mrp && (item?.mrp > item.price)) && (
+            <OfferText style={{textDecorationLine: 'line-through'}}>Rs {item.mrp}/-</OfferText>            
+          )
+        }
         <Text>Rs {item.price}/-</Text>
       </View>
       <View style={{ width : '28%', alignItems : 'center', justifyContent:'center'}}>

@@ -8,6 +8,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:544873914792:android:899357c8ed032ebc677d9d",
+        "android_client_info": {
+          "package_name": "com.closebuy.customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "544873914792-r84i5rq5gs3uljucf52j2csmf67g97lb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBr0Mwah6dSgRcImoacsh6PMco2-B5B9fY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "544873914792-r84i5rq5gs3uljucf52j2csmf67g97lb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:544873914792:android:e49b18e36074b097677d9d",
         "android_client_info": {
           "package_name": "com.nxtstores.customer"
@@ -19,6 +48,43 @@
           "client_type": 1,
           "android_info": {
             "package_name": "com.nxtstores.customer",
+            "certificate_hash": "badc7c2df64e53ab966be34f12be327f5c63b3f7"
+          }
+        },
+        {
+          "client_id": "544873914792-r84i5rq5gs3uljucf52j2csmf67g97lb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBr0Mwah6dSgRcImoacsh6PMco2-B5B9fY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "544873914792-r84i5rq5gs3uljucf52j2csmf67g97lb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:544873914792:android:b08567d9eaadba08677d9d",
+        "android_client_info": {
+          "package_name": "com.nxtstores.dealer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "544873914792-92ka9ectu2aflcpa44t6v79f6imjp7b1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nxtstores.dealer",
             "certificate_hash": "badc7c2df64e53ab966be34f12be327f5c63b3f7"
           }
         },

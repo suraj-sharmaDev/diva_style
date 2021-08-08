@@ -14,7 +14,7 @@ const Container = styled.SafeAreaView`
 const OfferItem = styled.TouchableOpacity`
   background-color : ${Color.preLoadingColor};  
   height: 150px;
-  width: ${width * 0.45};
+  width: ${width * 0.7};
   border-width : 1px;
   border-color : ${Color.greyColor};
   border-radius: 12px;  
@@ -24,26 +24,26 @@ const OfferItem = styled.TouchableOpacity`
 
 const Image = styled.Image`
   height: 150px;
-  width: ${width * 0.43};
+  width: ${width * 0.7};
   border-radius: 12px;  
 `;
 
 function Item({ id, src }) {
   return (
-    <OfferItem activeOpacity={0.8} onPress={comingSoon}>
-      <Image source = {{ uri : src}}/>
+    <OfferItem activeOpacity={1} onPress={comingSoon}>
+      <Image source = {{ uri : src}} resizeMode="stretch"/>
     </OfferItem>
   );
 }
 
 function comingSoon(){
-  ToastAndroid.showWithGravityAndOffset(
-    'Offers coming soon!',
-    ToastAndroid.SHORT,
-    ToastAndroid.BOTTOM,
-    25,
-    50,
-  );  
+  // ToastAndroid.showWithGravityAndOffset(
+  //   'Offers coming soon!',
+  //   ToastAndroid.SHORT,
+  //   ToastAndroid.BOTTOM,
+  //   25,
+  //   50,
+  // );  
 }
 export default function OffersPresenter({OfferData, navigation}) {
   return (

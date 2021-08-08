@@ -112,7 +112,7 @@ const CartScreenPresenter = ({navigation, store, address, ...props}) => {
         if(typeof result.error == 'undefined' || !result.error){
           const {razorPayOrderId, totalAmount, nxtstoresOrderId} = result;
           var options = {
-            description: 'Ordered Items from nxtstores customer App',
+            description: 'Ordered Items from closebuy customer App',
             currency: 'INR',
             amount: totalAmount,
             order_id: razorPayOrderId,

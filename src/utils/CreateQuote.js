@@ -36,7 +36,7 @@ export const CreateQuoteForServices = (formData) => {
                 const {razorPayOrderId, totalAmount, nxtstoresQuoteId} = result;
 
                 var options = {
-                    description: 'Ordered Items from nxtstores customer App',
+                    description: 'Ordered Items from closebuy customer App',
                     currency: 'INR',
                     amount: totalAmount,
                     order_id: razorPayOrderId,
